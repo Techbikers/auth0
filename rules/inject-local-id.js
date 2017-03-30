@@ -4,6 +4,11 @@
  */
 function (user, context, callback) {
   var namespace = 'https://techbikers.com/';
-  context.idToken[namespace + 'user_id'] = user.app_metadata.id;
+
+  // If the user has app_metadata then inject the ID into the token
+  if (user.app_metadata) {
+    context.idToken[namespace + 'user_id'] = user.app_metadata.id;
+  }
+
   callback(null, user, context);
 }
