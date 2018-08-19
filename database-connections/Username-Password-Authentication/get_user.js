@@ -1,6 +1,6 @@
 function getByEmail (email, callback) {
   request({
-    url:  "https://techbikers.com/api/auth/account",
+    url:  "https://api.techbikers.com/auth/account",
     method: "GET",
     json: true,
     headers: {

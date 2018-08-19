@@ -13,7 +13,7 @@ function (user, context, done) {
 
   // Go ahead and create a new user
   request.post({
-    url: 'https://techbikers.com/api/riders/',
+    url: 'https://api.techbikers.com/riders/',
     json: Object.assign({}, { email: user.email }, user.user_metadata)
   }, function(err, response, body) {
     // Handle errors

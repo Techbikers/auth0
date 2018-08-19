@@ -1,6 +1,6 @@
 function login (email, password, callback) {
   request({
-    url:  "https://techbikers.com/api/auth/verify",
+    url:  "https://api.techbikers.com/auth/verify",
     method: "GET",
     json: true,
     headers: {
