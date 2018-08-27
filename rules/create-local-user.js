@@ -8,6 +8,7 @@ function (user, context, done) {
 
   // Check to see if the user already has a local record
   if (user.app_metadata.id) {
+    console.log('[-] Skipping create-local-user rule');
     return done(null, user, context);
   }
 
@@ -25,6 +26,8 @@ function (user, context, done) {
     user.app_metadata.id = body.id;
     auth0.users.updateAppMetadata(user.user_id, user.app_metadata);
 
+    console.log('[+] Running create-local-user rule');
+    console.log(`    Local user: ${body.id}`);
     done(null, user, context);
   });
 }
